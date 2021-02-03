@@ -1,41 +1,56 @@
-// import logo from './logo.svg';
 import {useState} from 'react';
-
-//import logo from './tek_logo.png';
 import './App.css';
-import Todo from './Components/Todo';
 
 function App() {
 
-  const [todos, setTodos] = useState(["eat","sleep","code","pray","repeat"]);  //sample todo items.  these will need to be changed in your app.  Just filler todos, although they are quite important!
+  const [todos, setTodos] = useState([""]);
   const [items, setItems] = useState([]);
 
   const itemEvent = (event) => {
-      setTodos(even.target.value);
+    if(event.target.value === null){
+
+    }
+    else{
+      setTodos(event.target.value);
+    }
   };
 
 const listItems = () => {
     setItems((oldItems) => {
+      if(setItems.length === 0){
+
+      }else{
       return [...oldItems, todos];
+      }
     });
     setTodos("");
 };
 
+  const deleteItem = index =>{
+    const newItems = [...items];
+    newItems.splice(index, 1);
+    setItems(newItems);
+  };
+
+  const deleteAll = () =>{
+    const zeroItems = []
+    setItems(zeroItems);
+  };
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <div>
          <br/>
-          <p>Create a Todo List App</p>
-          <input type = "text" value = {todo } placeholder="Add Items" onChange = {itemEvent}/>;
+          <p>Jordan's ToDo List: </p>
+          <input type = "text" value = {todos} placeholder="Add Items" onChange = {itemEvent}/>
           <button onClick={(listItems)}> + </button>
-        <Todo item="1"/>
-          <Todo item="2"/>
-          <Todo item="3"/>
           <ol>
           {items.map((itemval) =>{ 
-          return <li>{itemval} </li>;})}
+          return <ul> 
+         <input type = "checkbox" defaultChecked={false} ></input> {itemval}  <button onClick={(deleteItem)}> x </button> </ul>;})}
+          <button onClick={(deleteAll)}> delete all </button>
           </ol>
         </div>
       </header>
@@ -44,3 +59,4 @@ const listItems = () => {
 }
 
 export default App;
+//Runtime-terror 4 life
