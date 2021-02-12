@@ -1,18 +1,18 @@
 import React from 'react'
-
-function Article() {
+//import {NewsContext} from '../NewsContext'
+function Article({data}) {
     return (
         <article>
             <header>
-                <h2>Sample Article</h2>
+                <h2>{data.title}</h2>
                 <img src="https://via.placeholder.com/150" alt="placeholder"/>
             </header>
             <main>
                 <section>
-                    <p>Sample Article Section 1</p>
+                    <p>{data.description}</p>
                 </section>
                 <section>
-                    <p>Sample Article Section 2</p>
+                    <p>{data.content}</p>
                 </section>
             </main>
         </article>

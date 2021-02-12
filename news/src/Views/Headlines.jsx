@@ -4,8 +4,7 @@ import Article from '../Components/Article';
 function Headlines() {
     return (
         <div>
-            <h1>Headline News goes here: </h1> 
-            <p>This should be on the main home page</p>
+            <h1>News: </h1> 
             <Article/>
             <Article/>
             <Article/>

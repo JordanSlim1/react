@@ -4,7 +4,7 @@ import Article from '../Components/Article';
 function Sports() {
     return (
         <div>
-            <h1>Sports News goes here: </h1>
+            <h1>Sports: </h1>
             <Article/>
             <Article/>
             <Article/>
